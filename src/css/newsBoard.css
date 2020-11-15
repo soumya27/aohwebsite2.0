@@ -1,0 +1,41 @@
+/* News board section */
+.newssection{
+    height: 700px;
+    background-color: white;
+}
+
+.newssection h3{
+    padding-top: 2%;
+    font-size: 30px;
+}
+
+.newsBoard{
+    height: 450px;
+    overflow: scroll;
+    border-radius: 10px;
+    background-color: #D6D6D6;
+    width: 60%;
+    margin: auto;
+    padding: 2%;
+
+}
+
+.newscard{
+    padding: 2%;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #011638;
+    color: white;
+    text-align: left;
+    transition: flex 0.5s ease-out;
+}
+
+.newscard:hover{
+  background-color: #1C2C47;
+}
+.newstitle{
+    font-size: 18px;
+}
+.newsdesc{
+    font-size: 15px;
+}

@@ -1,0 +1,42 @@
+
+.footercontainer{
+    display: flex;
+    background-color :#011638;
+    color: white;
+    height: 200px;
+  }
+  
+  .footercontainer-sitename{
+    margin-top: 6%;
+    width: 20%;
+  }
+  
+  .links {
+    width: 20%;
+    padding: 2% 10%;
+    text-align: left;
+  }
+  
+  .links p{
+    font-size: 20px;
+  }
+  
+  .links li{
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+  }
+  
+  .links li:hover{
+    cursor: pointer;
+    color: #D6D6D6;
+  }
+  
+  .contactus{
+    width: 60%;
+  }
+  .contactus iframe{
+    padding-top: 5%;
+  }
+  
+  

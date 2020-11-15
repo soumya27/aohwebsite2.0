@@ -1,0 +1,13 @@
+html{
+  background-color: #CDCDCD;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+

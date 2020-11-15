@@ -1,0 +1,35 @@
+.imageSection{
+    height: 700px;
+  }
+  
+  .imagesliderContainer{
+    display: inline-flex;
+    margin: 3%;
+    width: 1024px;
+    height: 550px;
+    background-color:#364156;
+  }
+  
+  .leftbutton {
+    width: 10%;
+    border: none;
+    background-color: Transparent;
+    outline:none;
+    padding: 1%;
+    cursor:pointer;
+  }
+  
+  .imagecontainter{
+    width: 100%;
+  }
+  
+  .rightbutton{
+    width: 10%;
+    border: none;
+    outline:none;
+    background-color: Transparent;
+    padding: 1%;
+    cursor:pointer;
+  }
+  
+  

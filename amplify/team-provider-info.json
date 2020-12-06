@@ -1,0 +1,22 @@
+{
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-aohbackend-main-115259-authRole",
+      "UnauthRoleArn": "arn:aws:iam::759396714648:role/amplify-aohbackend-main-115259-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::759396714648:role/amplify-aohbackend-main-115259-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-aohbackend-main-115259-deployment",
+      "UnauthRoleName": "amplify-aohbackend-main-115259-unauthRole",
+      "StackName": "amplify-aohbackend-main-115259",
+      "StackId": "arn:aws:cloudformation:us-east-1:759396714648:stack/amplify-aohbackend-main-115259/0546e570-2763-11eb-b109-12cf2806950f",
+      "AmplifyAppId": "drvluxx6vavkq"
+    },
+    "categories": {
+      "auth": {
+        "aohbackend4bebd6c3": {
+          "hostedUIProviderCreds": "[]"
+        }
+      }
+    }
+  }
+}

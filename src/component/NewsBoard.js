@@ -32,9 +32,9 @@ const NewsBoard = () =>{
             setNewsArticles(previousarray => {
                 let newarray = [...previousarray];
                 let firstArticle = newarray.shift();
-                console.log("first article: ", JSON.stringify(newsArticles[0]));
+                // console.log("first article: ", JSON.stringify(newsArticles[0]));
                 newarray.push(firstArticle);
-                console.log("new array: ", JSON.stringify(newarray[0]));
+                // console.log("new array: ", JSON.stringify(newarray[0]));
                 setNewsArticles(newarray);
             }); 
         }, 4000);

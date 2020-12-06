@@ -5,9 +5,8 @@ import ImageSlider from './component/ImageSlider';
 import NewsBoard from './component/NewsBoard';
 import Location from './component/Location';
 
+
 function App() {
-  
-  
   return (
     <div className="App">
      <Header />

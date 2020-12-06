@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import {Auth} from 'aws-amplify'
 import Dropdown from './Dropdown';
 import '../css/header.css'
 
 const Header = () =>{
+    const [user,setUser] = useState(null);
+    const [buttonText, setButtonText] = useState("Sign in with Google");
     const listItems = [
         {
             "title": "Society",
@@ -40,14 +43,36 @@ const Header = () =>{
             "links": ["",""],
         }
     ];
+
+    useEffect(()=>{
+        Auth.currentAuthenticatedUser().then(user =>{
+            console.log("in use effect : log user ",user);
+            setUser(user);
+            setButtonText("Logout");
+        }).catch(error =>{
+            console.log("Not signed in");
+            setButtonText("Sign in with Google");
+        })
+    },[])
+
+    
+    async function signInUser(){
+        if (user){
+            Auth.signOut();
+            setUser(null);
+        }else{
+            Auth.federatedSignIn({provider: "Google"})
+        }
+    }
+
     return (
         <div className="headercontainer"> 
             <div className="headername">
                 <div className="sitename"> 
                     AOH Welfare Association
                 </div>
-                <button className="loginButton">
-                    Login
+                <button className="loginButton" onClick={signInUser}>
+                    {buttonText}
                 </button>
             </div>
             

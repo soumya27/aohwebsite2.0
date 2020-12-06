@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "aohbackend4bebd6c3": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

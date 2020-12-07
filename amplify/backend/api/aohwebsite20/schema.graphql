@@ -1,5 +1,12 @@
+type FooterLink @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  title: String
+  action: String
+}
+
 type NewsArticles @model @auth(rules: [{allow: private}]) {
   id: ID!
   title: String
   description: String
 }
+ 

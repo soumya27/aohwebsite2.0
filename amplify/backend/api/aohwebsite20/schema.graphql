@@ -1,10 +1,25 @@
+type HeaderName @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  title: String
+  HeaderOptions: [HeaderOption] @connection(keyName: "byHeaderName", fields: ["id"])
+}
+
+type HeaderOption @model @auth(rules: [{allow: private}]) @key(name: "byHeaderName", fields: ["headernameID"]) {
+  id: ID!
+  title: String
+  action: String
+  options: String
+  isOwner: Boolean
+  headernameID: ID!
+}
+
 type FooterLink @model @auth(rules: [{allow: private}]) {
   id: ID!
   title: String
   action: String
 }
 
-type NewsArticles @model @auth(rules: [{allow: private}]) {
+type NewsArticle @model @auth(rules: [{allow: private}]) {
   id: ID!
   title: String
   description: String

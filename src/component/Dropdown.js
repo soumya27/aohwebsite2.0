@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Dropdown = ({headername, listItems, links}) =>{
+const Dropdown = ({headername, options}) =>{
 
     const [listOpen, setListOpen] = useState(false);
     
@@ -9,7 +9,7 @@ const Dropdown = ({headername, listItems, links}) =>{
     }
 
     const handleClickItem = (index) => {
-        window.open(links[index])
+        window.open(options[index].action)
     }
 
     return (
@@ -20,8 +20,8 @@ const Dropdown = ({headername, listItems, links}) =>{
                 </div>
            </div>
            { listOpen && <ul className="dropdown-options" >
-                {listItems.map((item,index)=>(
-                    <li className="dropdown-options-items" onClick={()=>handleClickItem(index)}>{item}</li>
+                {options.map((item,index)=>(
+                    <li key={index} className="dropdown-options-items" onClick={()=>handleClickItem(index)}>{item.options}</li>
                 ))}
             </ul>
            }

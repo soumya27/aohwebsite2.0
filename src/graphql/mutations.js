@@ -1,6 +1,126 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createHeaderName = /* GraphQL */ `
+  mutation CreateHeaderName(
+    $input: CreateHeaderNameInput!
+    $condition: ModelHeaderNameConditionInput
+  ) {
+    createHeaderName(input: $input, condition: $condition) {
+      id
+      title
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      HeaderOptions {
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const updateHeaderName = /* GraphQL */ `
+  mutation UpdateHeaderName(
+    $input: UpdateHeaderNameInput!
+    $condition: ModelHeaderNameConditionInput
+  ) {
+    updateHeaderName(input: $input, condition: $condition) {
+      id
+      title
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      HeaderOptions {
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const deleteHeaderName = /* GraphQL */ `
+  mutation DeleteHeaderName(
+    $input: DeleteHeaderNameInput!
+    $condition: ModelHeaderNameConditionInput
+  ) {
+    deleteHeaderName(input: $input, condition: $condition) {
+      id
+      title
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      HeaderOptions {
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const createHeaderOption = /* GraphQL */ `
+  mutation CreateHeaderOption(
+    $input: CreateHeaderOptionInput!
+    $condition: ModelHeaderOptionConditionInput
+  ) {
+    createHeaderOption(input: $input, condition: $condition) {
+      id
+      title
+      action
+      options
+      isOwner
+      headernameID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateHeaderOption = /* GraphQL */ `
+  mutation UpdateHeaderOption(
+    $input: UpdateHeaderOptionInput!
+    $condition: ModelHeaderOptionConditionInput
+  ) {
+    updateHeaderOption(input: $input, condition: $condition) {
+      id
+      title
+      action
+      options
+      isOwner
+      headernameID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteHeaderOption = /* GraphQL */ `
+  mutation DeleteHeaderOption(
+    $input: DeleteHeaderOptionInput!
+    $condition: ModelHeaderOptionConditionInput
+  ) {
+    deleteHeaderOption(input: $input, condition: $condition) {
+      id
+      title
+      action
+      options
+      isOwner
+      headernameID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createFooterLink = /* GraphQL */ `
   mutation CreateFooterLink(
     $input: CreateFooterLinkInput!
@@ -52,12 +172,12 @@ export const deleteFooterLink = /* GraphQL */ `
     }
   }
 `;
-export const createNewsArticles = /* GraphQL */ `
-  mutation CreateNewsArticles(
-    $input: CreateNewsArticlesInput!
-    $condition: ModelNewsArticlesConditionInput
+export const createNewsArticle = /* GraphQL */ `
+  mutation CreateNewsArticle(
+    $input: CreateNewsArticleInput!
+    $condition: ModelNewsArticleConditionInput
   ) {
-    createNewsArticles(input: $input, condition: $condition) {
+    createNewsArticle(input: $input, condition: $condition) {
       id
       title
       description
@@ -69,12 +189,12 @@ export const createNewsArticles = /* GraphQL */ `
     }
   }
 `;
-export const updateNewsArticles = /* GraphQL */ `
-  mutation UpdateNewsArticles(
-    $input: UpdateNewsArticlesInput!
-    $condition: ModelNewsArticlesConditionInput
+export const updateNewsArticle = /* GraphQL */ `
+  mutation UpdateNewsArticle(
+    $input: UpdateNewsArticleInput!
+    $condition: ModelNewsArticleConditionInput
   ) {
-    updateNewsArticles(input: $input, condition: $condition) {
+    updateNewsArticle(input: $input, condition: $condition) {
       id
       title
       description
@@ -86,12 +206,12 @@ export const updateNewsArticles = /* GraphQL */ `
     }
   }
 `;
-export const deleteNewsArticles = /* GraphQL */ `
-  mutation DeleteNewsArticles(
-    $input: DeleteNewsArticlesInput!
-    $condition: ModelNewsArticlesConditionInput
+export const deleteNewsArticle = /* GraphQL */ `
+  mutation DeleteNewsArticle(
+    $input: DeleteNewsArticleInput!
+    $condition: ModelNewsArticleConditionInput
   ) {
-    deleteNewsArticles(input: $input, condition: $condition) {
+    deleteNewsArticle(input: $input, condition: $condition) {
       id
       title
       description

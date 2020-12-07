@@ -1,30 +1,19 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import '../css/footer.css'
+import {API} from 'aws-amplify';
+import {listFooterLinks} from '../graphql/queries';
 
 const Footer = () =>{
+    const [footerLinks, setFooterLinks] = useState('');
     
-    const links = [
-        {
-        "title":"Google Drive",
-        "action" : ""
-        },{
-        "title":"GVMC",
-        "action" : ""
-        },{
-        "title":"SBI",
-        "action" : ""
-        },{
-        "title":"MyGate",
-        "action" : ""
-        },{
-        "title":"Club Booking",
-        "action" : ""
-        },{
-        "title":"Vegatable Wala",
-        "action" : ""
-        }
-
-    ];
+    useEffect(() => {
+        fetchFooterLinks();
+    }, []);
+    
+    async function fetchFooterLinks() {
+        const result = await API.graphql({query: listFooterLinks});
+        setFooterLinks(result.data.listFooterLinks.items);
+    }
 
     const handleOnclick = (url)=>{
         window.open(url);
@@ -38,13 +27,19 @@ const Footer = () =>{
             <div className="contactus">
                
             </div>
-            <div className="links">
-                <ul>
-                    {links.map((item,index) =>(
-                        <li key={index} onClick={()=>handleOnclick(item.action)}>{item.title}</li>
-                    ))}
-                </ul>
-            </div>
+            {
+                !footerLinks ? null:
+                <div className="links">
+                    <ul>
+                        {
+                            footerLinks.map((item) => {
+                                return (<li key={item.id} onClick={()=>handleOnclick(item.action)}>{item.title}</li>);
+                            })
+                        }
+                    </ul>
+                </div>
+            }
+           
         
         </div>
     );

@@ -2,7 +2,7 @@ import React,{ useState, useEffect} from 'react';
 import '../css/newsBoard.css';
 
 import {API} from 'aws-amplify';
-import {listNewsArticless} from '../graphql/queries';
+import {listNewsArticles} from '../graphql/queries';
 
 import NewsCard from './Newscard';
 
@@ -14,24 +14,25 @@ const NewsBoard = () =>{
     }, []);
     
     async function fetchNewArticles() {
-        const result = await API.graphql({query: listNewsArticless});
-        setNewsArticles(result.data.listNewsArticless.items);
+        const result = await API.graphql({query: listNewsArticles});
+        setNewsArticles(result.data.listNewsArticles.items);
     }
 
     return (
-        <section className="newssection" >
-            <h3>Notice Board</h3>
-            { !newsArticles ? null: (
-                <div className="newsBoard">
-                    {
-                        newsArticles.map((item,index) => {
-                            return (<NewsCard key={item.id} item={item} id={index}/>);
-                        })
-                    }
-                </div>
-                )
-            }
-        </section>
+        !newsArticles ? 
+        null
+        : (
+            <section className="newssection" >
+                <h3>Notice Board</h3>
+                    <div className="newsBoard">
+                        {
+                            newsArticles.map((item,index) => {
+                                return (<NewsCard key={item.id} item={item} id={index}/>);
+                            })
+                        }
+                    </div>
+            </section>
+        )
     );
 };
 

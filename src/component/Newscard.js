@@ -1,18 +1,12 @@
-import React, { useState }  from 'react';
+import React, { useEffect, useState }  from 'react';
 
-const NewsCard = ({
-        item,id
-    }) =>{
-
+const NewsCard = ({ item,id}) =>{
     const [display, setDisplay] = useState(false);
     
- 
     const toggle= ()=>{
-       
         setDisplay(!display);
     }
 
-    
     return (
         <div className="newscard" 
             onMouseEnter={toggle}

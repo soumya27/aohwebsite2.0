@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "aohwebsite20",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authaohbackend4bebd6c3",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

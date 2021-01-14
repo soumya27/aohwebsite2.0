@@ -8,37 +8,44 @@ const Header = () =>{
     const [user,setUser] = useState(null);
     const [buttonText, setButtonText] = useState("Sign in with Google");
     const [dropdownItems, setDropdownItems] = useState(null);
-
+    
     useEffect(()=>{
         Auth.currentAuthenticatedUser().then(user =>{
             console.log("in use effect : log user ",user);
             setUser(user);
             setButtonText("Logout");
-            fetchHeaderName();
+            
         }).catch(error =>{
             console.log("Not signed in");
             setButtonText("Sign in with Google");
         })
     },[])
 
+    useEffect(()=>{
+        fetchHeaderName();
+    },[user])
+
     async function fetchHeaderName(){
-        let items=[];
+        if(user){
+        let headers=[];
         const result = await API.graphql({query:listHeaderNames});
-        result.data.listHeaderNames.items.map(async(item,index) =>{
+        result.data.listHeaderNames.items.map((item,index) =>{
             let filter = {
                 headernameID : { 
                     eq: item.id
                 }
             }
-            const response = await API.graphql(graphqlOperation(listHeaderOptions, {filter}));
-            items[index] ={
-                id: item.id,
-                title: item.title,
-                options:response.data.listHeaderOptions.items
-            }
+            API.graphql(graphqlOperation(listHeaderOptions, {filter})).then(response =>{
+                headers[index] ={
+                    id: item.id,
+                    title: item.title,
+                    options:response.data.listHeaderOptions.items
+                }
+            });
         })
-        setDropdownItems(items);
+        setDropdownItems(headers);
         
+     }
     }
     
     async function signInUser(){

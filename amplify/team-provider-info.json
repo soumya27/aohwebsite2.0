@@ -13,9 +13,7 @@
     },
     "categories": {
       "auth": {
-        "aohbackend4bebd6c3": {
-          "hostedUIProviderCreds": "[]"
-        }
+        "aohbackend4bebd6c3": {}
       }
     }
   }

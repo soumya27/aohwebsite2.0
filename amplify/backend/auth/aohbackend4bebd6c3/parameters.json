@@ -1,6 +1,6 @@
 {
     "identityPoolName": "aohbackend4bebd6c3_identitypool_4bebd6c3",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "aohbac4bebd6c3",
     "userPoolName": "aohbackend4bebd6c3_userpool_4bebd6c3",
     "autoVerifiedAttributes": [

@@ -1,10 +1,27 @@
-import React, { useState } from 'react';
-import '../css/imageslider.css'
+import React, { useEffect, useState } from 'react';
+import {Storage} from 'aws-amplify';
+import '../css/imageslider.css';
+
 
 const ImageSlider = () =>{
     const [listofImages,setImageList] =useState(["./image/image1.jpg","./image/image2.jpg","./image/image3.jpg","./image/image4.jpg"]);
     const leftbutton = "<";
     const rightbutton = ">";
+
+    useEffect(()=>{
+        Storage.list('')
+        .then(result =>{
+            result.forEach(singleImage => {
+                if (singleImage.key){
+                    console.log(`get image : ${singleImage.key}`);
+                    Storage.get(singleImage.key).then(url =>{
+                        console.log(url);
+                    })
+                }
+            });
+        } )
+        .catch(err => console.log(err));
+    },[])
 
     const handleclick = (e)=>{
         let newarray = [...listofImages];

@@ -16,14 +16,16 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "http://localhost:3000/,https://main.drvluxx6vavkq.amplifyapp.com/",
-        "redirectSignOut": "http://localhost:3000/,https://main.drvluxx6vavkq.amplifyapp.com/",
+        "redirectSignIn": "http://localhost:3000/",
+        "redirectSignOut": "http://localhost:3000/",
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS",
     "aws_appsync_graphqlEndpoint": "https://u7fkqvyzy5bmjiyrpolbflumqm.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
-    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS"
+    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
+    "aws_user_files_s3_bucket": "aohbackend8ceaab30061841c4ab00291d8e05de11115259-main",
+    "aws_user_files_s3_bucket_region": "us-east-1"
 };
 
 

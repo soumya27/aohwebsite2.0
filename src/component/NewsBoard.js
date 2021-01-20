@@ -1,7 +1,7 @@
 import React,{ useState, useEffect} from 'react';
 import '../css/newsBoard.css';
 
-import {API} from 'aws-amplify';
+import {API,Auth} from 'aws-amplify';
 import {listNewsArticles} from '../graphql/queries';
 
 import NewsCard from './Newscard';
@@ -14,8 +14,19 @@ const NewsBoard = () =>{
     }, []);
     
     async function fetchNewArticles() {
-        const result = await API.graphql({query: listNewsArticles});
-        setNewsArticles(result.data.listNewsArticles.items);
+        // const user = await Auth.currentAuthenticatedUser();
+        Auth.currentAuthenticatedUser().then(user =>{
+            console.log(user);
+            API.graphql({query: listNewsArticles}).then(result =>{
+                console.log("Result from listNewsAtricles", result);
+                setTimeout(function(){
+                    setNewsArticles(result.data.listNewsArticles.items);
+                }, 300);
+            });
+            
+        }).catch(error=>{
+            console.log(error);
+        })
     }
 
     return (
@@ -27,6 +38,7 @@ const NewsBoard = () =>{
                     <div className="newsBoard">
                         {
                             newsArticles.map((item,index) => {
+                                console.log(newsArticles);
                                 return (<NewsCard key={item.id} item={item} id={index}/>);
                             })
                         }

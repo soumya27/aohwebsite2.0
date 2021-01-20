@@ -14,6 +14,7 @@ const Header = () =>{
             console.log("in use effect : log user ",user);
             setUser(user);
             setButtonText("Logout");
+            fetchHeaderName();
             
         }).catch(error =>{
             console.log("Not signed in");
@@ -21,12 +22,11 @@ const Header = () =>{
         })
     },[])
 
-    useEffect(()=>{
-        fetchHeaderName();
-    },[user])
+    // useEffect(()=>{
+    //     fetchHeaderName();
+    // },[user])
 
     async function fetchHeaderName(){
-        if(user){
         let headers=[];
         const result = await API.graphql({query:listHeaderNames});
         result.data.listHeaderNames.items.map((item,index) =>{
@@ -43,9 +43,10 @@ const Header = () =>{
                 }
             });
         })
-        setDropdownItems(headers);
+        setTimeout(function(){
+            setDropdownItems(headers);
+        }, 300);
         
-     }
     }
     
     async function signInUser(){
@@ -71,7 +72,6 @@ const Header = () =>{
                 <div className="dropdown-container">
                 {
                     dropdownItems.map((item)=>{
-                        console.log(item);
                         return (<Dropdown key={item.id} 
                         headername={item.title} 
                         options={item.options}

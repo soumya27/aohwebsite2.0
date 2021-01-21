@@ -36,7 +36,8 @@ const updatedAwsConfig = {
   }
 }
 
-Amplify.configure(updatedAwsConfig);
+API.configure(updatedAwsConfig);
+Auth.configure(updatedAwsConfig);
 
 // Amplify.configure(config);
 

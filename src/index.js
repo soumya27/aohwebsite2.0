@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Amplify from 'aws-amplify'
+import {Auth, API} from 'aws-amplify'
 import awsConfig from './aws-exports'
 
 const isLocalhost = Boolean(

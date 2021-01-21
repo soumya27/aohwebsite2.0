@@ -45,7 +45,7 @@ const Header = () =>{
         })
         setTimeout(function(){
             setDropdownItems(headers);
-        }, 600);
+        }, 1000);
         
     }
     

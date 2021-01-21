@@ -36,6 +36,7 @@ const updatedAwsConfig = {
   }
 }
 
+console.log("updated aws config", updatedAwsConfig);
 API.configure(updatedAwsConfig);
 Auth.configure(updatedAwsConfig);
 Storage.configure(updatedAwsConfig);

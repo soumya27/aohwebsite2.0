@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Storage,Auth, API} from 'aws-amplify'
+import Amplify from 'aws-amplify'
 import awsConfig from './aws-exports'
 
 const isLocalhost = Boolean(
@@ -37,9 +37,9 @@ const updatedAwsConfig = {
 }
 
 console.log("updated aws config", updatedAwsConfig);
-API.configure(updatedAwsConfig);
-Auth.configure(updatedAwsConfig);
-Storage.configure(updatedAwsConfig);
+Amplify.configure(updatedAwsConfig);
+// Auth.configure(updatedAwsConfig);
+// Storage.configure(updatedAwsConfig);
 
 // Amplify.configure(config);
 
